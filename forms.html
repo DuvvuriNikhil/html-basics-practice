@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms in HTML</title>
+</head>
+<body>
+   <form action="forms.php" method="post" enctype="multipart/form-data">
+    <!-- If we add large amount of data, we need to add "enctype="multipart/form-data""
+    so that when we give large data, we'll break it into multiple parts and after 
+    recieving all parts, they get reassembled. -->
+    <!-- POST value in method is used for storing confidential information like username, password in the form
+     GET value in method is used for storing insensitive information  -->
+
+     <!-- Types of labels in the form :
+     1. Username
+     2. Password
+     3. Date
+     4. Email
+     5. Tel(phonenumber)
+     6. Radio
+     7. Dropdown Menu
+     8. Checkbox
+     9. Number 
+     10. Text area
+     11. File-->
+            <!-- Username -->
+    <label for="username">Username:</label>
+    <input type="username" id="username" minlength="6" maxlength="15" placeholder="Something" required autofocus>
+    <!-- "autofocus" attribute directly focuses on the particular element when the page loads -->
+    <br>
+            <!-- Password -->
+    <label for="password">Password:</label>
+    <input type="password" id="password" minlength="8" maxlength="15" required>
+    <br>
+            <!-- Date -->
+    <label for="Birthday">Birthday:</label>
+    <input type="date" id="Birthday">
+    <br>
+            <!-- Email -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Something@gmail.com" required>
+    <br>
+            <!-- Tel -->
+    <label for="phonenumber">Phone Number:</label>
+    <input type="tel" id="phonenumber" placeholder="123-4567-890" pattern="[0-9]{3}-[0-9]{4}-[0-9]{3}">
+    <br>
+            <!-- Radio -->
+    <label for="gender">Gender:</label>
+    <label for="Male">Male</label>
+    <input type="radio" id="Male" name="gender" value="Male">
+    <label for="female">Female</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="others">Others</label>
+    <input type="radio" id="others" name="gender" value="others">
+    <!-- Here, value attribute is added so that computer will get to know about
+    the data in it. -->
+    <br>
+            <!-- Number -->
+    <label for="age">Age:</label>
+    <input type="number" id="age" min="0" max="100" value="1">
+    <br>
+            <!-- Dropdown Menu -->
+    <label for="education">Education</label>
+    <select id="education">
+        <option value="select">Select</option>
+        <option value="btech">B.Tech</option>
+        <option value="mtech">M.Tech</option>
+        <option value="phd">Phd</option>
+    </select>
+    <br>
+            <!-- Checkbox -->
+    <label for="subscribe">Subscribe:</label>
+    <label for="yes">Yes</label>
+    <input type="checkbox" id="yes" value="yes" name="subscribe">
+    <br>
+            <!-- Textarea -->
+    <label for="comment">Comment:</label>
+    <textarea id="comment" rows="2" cols="20"></textarea>
+    <br>
+            <!-- File -->
+    <label for="file">Select File:</label>
+    <input type="file" id="file" accept="image/png">
+    <!-- we can also give limited file selection access by using "accept" attribute -->
+    <br><br>
+    <input type="reset">
+    <input type="submit">
+   </form>
+   <!-- In the form,
+    if someone is using screen reader who are visually impaired, for this 
+   "for" attribute is used.
+   if we click on the heading, for the cursor to be appeared on the value we 
+   should add "id" attribute.  -->
+</body>
+</html>
